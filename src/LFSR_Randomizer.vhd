@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Randomizer is
+entity LFSR_Randomizer is
   generic (
     seed  : integer := 1;          
     width : integer := 8           
@@ -15,7 +15,7 @@ entity Randomizer is
   );
 end entity;
 
-architecture rtl of Randomizer is
+architecture rtl of LFSR_Randomizer is
     signal count           : std_logic_vector(width-1 downto 0) := std_logic_vector(to_unsigned(seed, width));
     signal linear_feedback : std_logic;
     signal limited_output  : unsigned(2 downto 0); 
